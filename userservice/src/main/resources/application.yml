@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: userservice
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
