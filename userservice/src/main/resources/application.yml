@@ -1,6 +1,6 @@
 spring:
   application:
-    name: userservice
+    name: user-service
 
   jpa:
     hibernate:
@@ -9,3 +9,8 @@ spring:
 
 server:
   port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
