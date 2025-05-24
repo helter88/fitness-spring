@@ -1,6 +1,10 @@
 spring:
   application:
     name: ai-service
+  data:
+    mongodb:
+      uri: mongodb://root:secret@localhost:27017/fitnessRecommendation?authSource=admin
+      database: fitnessRecommendation
 server:
   port: 8083
 
