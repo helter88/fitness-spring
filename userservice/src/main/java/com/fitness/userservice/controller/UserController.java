@@ -31,4 +31,9 @@ public class UserController {
     public ResponseEntity<UserResponseDto> register(@Valid @RequestBody RegisterRequestDto registerRequestDto ) {
         return ResponseEntity.ok(userService.register(registerRequestDto));
     }
+
+    @GetMapping("/validate/{userId}")
+    public ResponseEntity<Boolean> validateUser(@PathVariable UUID userId) {
+        return ResponseEntity.ok(userService.validateUser(userId));
+    }
 }

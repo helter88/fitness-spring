@@ -40,4 +40,8 @@ public class UserService {
                 user.getLastName()
         );
     }
+
+    public Boolean validateUser(UUID userId) {
+        return userRepository.existsById(userId);
+    }
 }
