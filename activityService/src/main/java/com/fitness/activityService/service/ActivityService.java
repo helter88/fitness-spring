@@ -14,8 +14,12 @@ import java.util.List;
 public class ActivityService {
 
     private final ActivityRepository activityRepository;
+    private final UserValidationService userValidationService;
 
     public ActivityResponseDto trackActivity(ActivityRequestDto activityRequestDto){
+        if (!userValidationService.validateUser(activityRequestDto.userId())){
+            throw new RuntimeException("Invalid user: " + activityRequestDto.userId());
+        }
         Activity activity = Activity.builder()
                 .userId(activityRequestDto.userId())
                 .type(activityRequestDto.type())

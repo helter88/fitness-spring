@@ -4,9 +4,10 @@ import com.fitness.activityService.model.ActivityType;
 
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.UUID;
 
 public record ActivityRequestDto(
-        String userId,
+        UUID userId,
         ActivityType type,
         Integer duration,
         Integer caloriesBurned,
